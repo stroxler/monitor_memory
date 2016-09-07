@@ -1,0 +1,7 @@
+* Various python system utility scripts
+
+At the moment, =run_and_monitor_memory.py= is the only script, and you can
+check the USAGE documentation to see what it does
+
+Eventually I hope to add more scripts, at which point I'll make a real
+README and possibly turn this into a proper python package
