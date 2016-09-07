@@ -44,11 +44,10 @@ import time
 import threading
 import subprocess
 
+
 def print_stderr(content):
     sys.stderr.write(content)
     sys.stderr.write('\n')
-
-
 
 
 def fork_with_pipe(executable=None, args=None):
@@ -102,8 +101,6 @@ def wait_for_child(pid, pipe_r):
     os.close(pipe_r)
     return exit_status
 
-
-################### TODO use this stuff
 
 def all_ps_memory_usage():
     """
