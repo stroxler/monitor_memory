@@ -96,7 +96,8 @@ def wait_for_child(pid, pipe_r):
     which have an open file descriptor for the write end of that pipe have
     exited.
     """
-    _, exit_status = os.waitpid(pid, 0)
+    _, exit_status_indicator = os.waitpid(pid, 0)
+    exit_status = exit_status_indicator // (2 ** 8)
     os.read(pipe_r, 1)
     os.close(pipe_r)
     return exit_status
