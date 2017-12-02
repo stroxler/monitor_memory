@@ -120,7 +120,7 @@ def all_ps_memory_usage():
     RSS_COL = 5
     KB_TO_MB = 1. / 1024
     out = subprocess.check_output(['ps', 'aux'])
-    process_lines = [l for l in out.split('\n')[1:] if l != '']
+    process_lines = [l for l in out.splitlines()[1:] if len(l) > 0]
     total_rss = 0
     for line in process_lines:
         proc_rss = float(line.split()[RSS_COL]) * KB_TO_MB
